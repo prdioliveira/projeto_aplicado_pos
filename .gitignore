@@ -1,0 +1,9 @@
+.idea/
+*.pyc
+*.log
+build.properties
+.idea/
+.settings/
+venv/
+env/
+geckodriver.log
