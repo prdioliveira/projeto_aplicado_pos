@@ -11,9 +11,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 # Configure Django App for Heroku.
 import django_heroku
-django_heroku.settings(locals())
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +29,7 @@ SECRET_KEY = 'django-insecure-0#$g@iay_j#%$+50ds8@cj@^wnp%5u$8+e2&b11f!t3agybj%d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://ecommerce-pos.herokuapp.com/']
 
 
 # Application definition
@@ -159,3 +160,5 @@ REST_AUTH_SERIALIZERS = {
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
+
+django_heroku.settings(locals())
