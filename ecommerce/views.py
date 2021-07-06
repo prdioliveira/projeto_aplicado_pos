@@ -14,8 +14,8 @@ from rest_framework.permissions import IsAdminUser, IsAuthenticated, AllowAny
 class ClienteViewSet(viewsets.ModelViewSet):
     serializer_class = ClienteSerializer
 
-    authentication_classes = [SessionAuthentication]
-    permission_classes = (IsAuthenticated, )
+    #authentication_classes = [SessionAuthentication]
+    #permission_classes = (IsAuthenticated, )
 
     def get_queryset(self):
         """
@@ -34,18 +34,18 @@ class ClienteViewSet(viewsets.ModelViewSet):
 class PedidoViewSet(viewsets.ModelViewSet):
     queryset = Pedido.objects.all()
     serializer_class = PedidoSerializer
-    authentication_classes = [SessionAuthentication]
-    permission_classes = (IsAuthenticated, )
+    #authentication_classes = [SessionAuthentication]
+    #permission_classes = (IsAuthenticated, )
 
 class ProdutoViewSet(viewsets.ModelViewSet):
     queryset = Produto.objects.all()
     serializer_class = ProdutoSerializer
-    authentication_classes = [SessionAuthentication]
-    permission_classes = (IsAuthenticated, )
+    #authentication_classes = [SessionAuthentication]
+    #permission_classes = (IsAuthenticated, )
 
 
 class CategoriaViewSet(viewsets.ModelViewSet):
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer
-    authentication_classes = [SessionAuthentication]
-    permission_classes = (IsAuthenticated, )
+    #authentication_classes = [SessionAuthentication]
+    #permission_classes = (IsAuthenticated, )
