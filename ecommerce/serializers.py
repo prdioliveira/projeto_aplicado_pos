@@ -1,14 +1,20 @@
-from app.comercio_eletronico.models.categoria_models import Categoria
-from app.comercio_eletronico.models.pedido_models import Pedido
+from  .models import Categoria
+from .models import Pedido
 from rest_framework import serializers
-from app.comercio_eletronico.models.clientes_models import Cliente
-from app.comercio_eletronico.models.pedido_models import Pedido
-from app.comercio_eletronico.models.produto_models import Produto
+from .models import Cliente
+from .models import Pedido
+from .models import Produto
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Cliente
+        fields = ['id', 'nome', 'CPF', 'endereco', 'estado', 'municipio', 'telefone']
 
 class ClienteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cliente
-        fields = ['id', 'nome', 'CPF', 'endereco', 'estado', 'municipio', 'telefone', 'email', 'senha']
+        fields = ['id', 'nome', 'CPF', 'endereco', 'estado', 'municipio', 'telefone', 'email']
 
 
 class PedidoSerializer(serializers.ModelSerializer):

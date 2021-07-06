@@ -1,0 +1,244 @@
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 05, 2021 - 21:26:24
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: [example.com] Please Confirm Your E-mail Address
+From: webmaster@localhost
+To: prdioliveira@teste.com
+Date: Tue, 06 Jul 2021 00:26:49 -0000
+Message-ID: <162553120904.7416.10397910242541024329@NOTEBOOK-PAULO>
+
+Hello from example.com!
+
+You're receiving this e-mail because user  has given your e-mail address to register an account on example.com.
+
+To confirm this is correct, go to http://localhost:8000/account/confirm-email/Mg:1m0YvJ:ltDc7MseSfqbqbUfUa6fJbhmL2DcZ5thATDPBV-8JE0/
+
+Thank you for using example.com!
+example.com
+-------------------------------------------------------------------------------
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 05, 2021 - 21:30:07
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 05, 2021 - 21:31:03
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 05, 2021 - 21:31:34
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 05, 2021 - 21:31:42
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 05, 2021 - 21:32:19
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 05, 2021 - 21:33:52
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 05, 2021 - 21:35:03
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 05, 2021 - 21:35:11
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 05, 2021 - 21:35:39
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 05, 2021 - 21:38:53
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 05, 2021 - 21:40:18
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 05, 2021 - 21:40:39
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 05, 2021 - 21:41:53
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 05, 2021 - 21:42:26
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 05, 2021 - 21:43:56
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 05, 2021 - 21:49:47
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 05, 2021 - 21:50:39
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 05, 2021 - 21:53:29
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: [example.com] Please Confirm Your E-mail Address
+From: webmaster@localhost
+To: prdioliveira@0101.com
+Date: Tue, 06 Jul 2021 00:56:37 -0000
+Message-ID: <162553299720.11628.14118353846498675227@NOTEBOOK-PAULO>
+
+Hello from example.com!
+
+You're receiving this e-mail because user  has given your e-mail address to register an account on example.com.
+
+To confirm this is correct, go to http://localhost:8000/accounts-rest/registration/account-confirm-email/Mw:1m0ZO9:d3NnYGw79SG1OoQGz8KVtt2iRMr6NkgougDfqzUQJRE/
+
+Thank you for using example.com!
+example.com
+-------------------------------------------------------------------------------
+Performing system checks...
+
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 05, 2021 - 21:58:14
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 05, 2021 - 22:09:16
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: [example.com] Please Confirm Your E-mail Address
+From: webmaster@localhost
+To: prdioliveira@0202.com
+Date: Tue, 06 Jul 2021 01:09:50 -0000
+Message-ID: <162553379097.12220.10047980623168026293@NOTEBOOK-PAULO>
+
+Hello from example.com!
+
+You're receiving this e-mail because user  has given your e-mail address to register an account on example.com.
+
+To confirm this is correct, go to http://localhost:8000/accounts-rest/registration/account-confirm-email/NA:1m0Zaw:oUyapN4B2MESDV9KrD8EHYuQl6t_tOc21AzPGAbqH5o/
+
+Thank you for using example.com!
+example.com
+-------------------------------------------------------------------------------
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 05, 2021 - 22:11:25
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 05, 2021 - 22:11:41
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: [example.com] Please Confirm Your E-mail Address
+From: webmaster@localhost
+To: prdioliveira@0404.com
+Date: Tue, 06 Jul 2021 12:51:37 -0000
+Message-ID: <162557589774.13712.16407717880359735872@NOTEBOOK-PAULO>
+
+Hello from example.com!
+
+You're receiving this e-mail because user  has given your e-mail address to register an account on example.com.
+
+To confirm this is correct, go to http://localhost:8000/accounts-rest/registration/account-confirm-email/NQ:1m0kY5:3z_TM7GWiwU-nk4q20xFNNQC_mIqwsrG3zxJShEJ6Lc/
+
+Thank you for using example.com!
+example.com
+-------------------------------------------------------------------------------
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 06, 2021 - 11:19:36
+Django version 3.1, using settings 'pae.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.

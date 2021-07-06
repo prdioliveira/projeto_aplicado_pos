@@ -15,15 +15,17 @@ Including another URLconf
 """
 
 from django import urls
-from django.urls import include, path
+from django.urls import include, path, re_path
 from rest_framework import routers
-from app.comercio_eletronico.views import CategoriaViewSet, ClienteViewSet
-from app.comercio_eletronico.views import PedidoViewSet
-from app.comercio_eletronico.views import ProdutoViewSet
+from ecommerce.views import CategoriaViewSet, ClienteViewSet
+from ecommerce.views import PedidoViewSet
+from ecommerce.views import ProdutoViewSet
 from django.contrib import admin
+from django.conf.urls import url
+from allauth.account.views import confirm_email
 
 router = routers.DefaultRouter()
-router.register(r'clientes', ClienteViewSet)
+router.register(r'clientes', ClienteViewSet, basename='Clientes')
 router.register(r'pedidos', PedidoViewSet)
 router.register(r'produtos', ProdutoViewSet)
 router.register(r'categorias', CategoriaViewSet)
@@ -32,5 +34,10 @@ router.register(r'categorias', CategoriaViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^rest-auth/', include('rest_auth.urls')),
+    url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
+    url(r'^account/', include('allauth.urls')),
+    url(r'^account/', include('allauth.urls')),
+    url(r'^accounts-rest/registration/account-confirm-email/(?P<key>.+)/$', confirm_email, name='account_confirm_email'),
 ]
