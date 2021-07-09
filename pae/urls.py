@@ -17,7 +17,7 @@ Including another URLconf
 from django import urls
 from django.urls import include, path, re_path
 from rest_framework import routers
-from ecommerce.views import CategoriaViewSet, ClienteViewSet
+from ecommerce.views import CategoriaViewSet, ClienteViewSet, ItensViewSet
 from ecommerce.views import PedidoViewSet
 from ecommerce.views import ProdutoViewSet
 from django.contrib import admin
@@ -26,9 +26,10 @@ from allauth.account.views import confirm_email
 
 router = routers.DefaultRouter()
 router.register(r'clientes', ClienteViewSet, basename='Clientes')
-router.register(r'pedidos', PedidoViewSet)
+router.register(r'pedidos', PedidoViewSet, basename='Pedido')
 router.register(r'produtos', ProdutoViewSet)
 router.register(r'categorias', CategoriaViewSet)
+router.register(r'itens', ItensViewSet)
 
 
 urlpatterns = [

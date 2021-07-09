@@ -1,6 +1,7 @@
-from  .models import Categoria
+from django.db.models import fields
+from  .models import Categoria, ItensDoPedido
 from .models import Pedido
-from rest_framework import serializers
+from rest_framework import request, serializers
 from .models import Cliente
 from .models import Pedido
 from .models import Produto
@@ -9,25 +10,33 @@ from .models import Produto
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cliente
-        fields = ['id', 'nome', 'CPF', 'endereco', 'estado', 'municipio', 'telefone']
+        fields = ['nome', 'CPF', 'endereco', 'estado', 'municipio', 'telefone']
 
 class ClienteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cliente
-        fields = ['id', 'nome', 'CPF', 'endereco', 'estado', 'municipio', 'telefone', 'email']
-
-
-class PedidoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Pedido
-        fields = ['id', 'cliente', 'codigo_pedido', 'data_pedido', 'produtos']
-
+        fields = ['nome', 'CPF', 'endereco', 'estado', 'municipio', 'telefone', 'email']
 
 
 class ProdutoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Produto
-        fields = ['id', 'codigo_produto', 'nome_produto', 'preco_produto', 'quantidade_estoque', 'categoria']
+        fields = ['codigo_produto', 'nome_produto', 'preco_produto', 'quantidade_estoque', 'categoria']
+
+
+class ItensDoPedidoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ItensDoPedido
+        fields = ['produto', 'quantidade']
+        depth = 1
+
+
+class PedidoSerializer(serializers.ModelSerializer):
+    produtos = ItensDoPedidoSerializer(source='itensdopedido_set', many=True, read_only=True)
+    class Meta:
+        model = Pedido
+        fields = ['codigo_pedido', 'cliente', 'data_pedido', 'produtos']
+        depth = 1
 
 
 class CategoriaSerializer(serializers.ModelSerializer):

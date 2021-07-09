@@ -26,9 +26,6 @@ class Cliente(AbstractUser):
     REQUIRED_FIELDS = []
 
     objects = CustomUserManager()
-
-
-    
     
 
     def __str__(self):
@@ -41,7 +38,7 @@ class Categoria(models.Model):
         verbose_name = 'categoria'
         verbose_name_plural = 'categorias'
 
-    codigo_categoria = models.CharField(max_length=15)
+    codigo_categoria = models.CharField(max_length=20, primary_key=True, name='codigo_categoria')
     nome_categoria = models.CharField(max_length=30)
 
     def __str__(self):
@@ -54,7 +51,7 @@ class Produto(models.Model):
         verbose_name = 'produto'
         verbose_name_plural = 'produtos'
 
-    codigo_produto = models.CharField(max_length=15)
+    codigo_produto = models.CharField(max_length=20, primary_key=True, name='codigo_produto')
     nome_produto = models.CharField(max_length=100)
     preco_produto = models.CharField(max_length=30)
     quantidade_estoque = models.CharField(max_length=15)
@@ -64,6 +61,15 @@ class Produto(models.Model):
     def __str__(self):
         return self.nome_produto
 
+class ItensDoPedido(models.Model):
+    class Meta:
+        db_table = 'itens_pedido'
+        verbose_name = 'itens_pedido'
+        verbose_name_plural = 'itens_pedidos'
+
+    produto = models.ForeignKey('Produto', on_delete=models.CASCADE)
+    pedido = models.ForeignKey('Pedido', on_delete=models.CASCADE)
+    quantidade = models.CharField(max_length=10)
 
 class Pedido(models.Model):
     class Meta:
@@ -72,9 +78,9 @@ class Pedido(models.Model):
         verbose_name_plural = 'pedidos'
 
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, related_name='cliente')
-    codigo_pedido = models.CharField(max_length=20)
+    codigo_pedido = models.CharField(max_length=20, primary_key=True, name='codigo_pedido')
     data_pedido = models.DateField()
-    produtos = models.ManyToManyField(Produto, related_name='itens_pedido', db_table='itens_pedido')
+    produtos = models.ManyToManyField(Produto, through=ItensDoPedido)
 
     def __str__(self):
         return self.codigo_pedido + "-" + self.cliente.nome

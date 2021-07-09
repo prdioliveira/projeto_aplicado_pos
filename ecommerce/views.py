@@ -1,14 +1,15 @@
-from .models import Categoria
+from .models import Categoria, ItensDoPedido
 from .models import Cliente
 from rest_framework import generics, viewsets
 from .models import Cliente
 from .models import Pedido
-from .serializers import CategoriaSerializer, ClienteSerializer
+from .serializers import CategoriaSerializer, ClienteSerializer, ItensDoPedidoSerializer
 from .serializers import PedidoSerializer
 from .serializers import ProdutoSerializer
 from .models import Produto
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.permissions import IsAdminUser, IsAuthenticated, AllowAny
+from rest_framework.decorators import api_view
 
 # Create your views here.
 class ClienteViewSet(viewsets.ModelViewSet):
@@ -16,27 +17,39 @@ class ClienteViewSet(viewsets.ModelViewSet):
 
     #authentication_classes = [SessionAuthentication]
     #permission_classes = (IsAuthenticated, )
-
+    #@api_view(['GET', 'POST'])
     def get_queryset(self):
         """
         Optionally restricts the returned purchases to a given user,
         by filtering against a `username` query parameter in the URL.
         """
-        queryset = Cliente.objects.all()
+        
+        user = self.request.user.email
+        queryset = Cliente.objects.filter(email=user)
         email = self.request.query_params.get('email')
         if email is not None:
-            print('-------------------->', email)
             queryset = queryset.filter(email=email)
-            print('++++++++++++++++', queryset)
+            # exemplo: http://localhost:8000/clientes?email=teste@teste.com
         return queryset
 
-
 class PedidoViewSet(viewsets.ModelViewSet):
-    queryset = Pedido.objects.all()
     serializer_class = PedidoSerializer
     #authentication_classes = [SessionAuthentication]
     #permission_classes = (IsAuthenticated, )
 
+    def get_queryset(self):
+        """
+        This view should return a list of all the purchases
+        for the currently authenticated user.
+        """
+        user = self.request.user
+        queryset = Pedido.objects.filter(cliente_id=user.id)
+        data_pedido = self.request.query_params.get('data_pedido')
+        if data_pedido is not None:
+            queryset = queryset.filter(data_pedido=data_pedido)
+            # exemplo: http://localhost:8000/pedidos?data_pedido=2021-07-08
+        return queryset
+    
 class ProdutoViewSet(viewsets.ModelViewSet):
     queryset = Produto.objects.all()
     serializer_class = ProdutoSerializer
@@ -47,5 +60,11 @@ class ProdutoViewSet(viewsets.ModelViewSet):
 class CategoriaViewSet(viewsets.ModelViewSet):
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer
+    #authentication_classes = [SessionAuthentication]
+    #permission_classes = (IsAuthenticated, )
+
+class ItensViewSet(viewsets.ModelViewSet):
+    queryset = ItensDoPedido.objects.all()
+    serializer_class = ItensDoPedidoSerializer
     #authentication_classes = [SessionAuthentication]
     #permission_classes = (IsAuthenticated, )
