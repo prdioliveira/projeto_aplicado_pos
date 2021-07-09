@@ -10,7 +10,7 @@ from .models import Produto
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cliente
-        fields = ['nome', 'CPF', 'endereco', 'estado', 'municipio', 'telefone']
+        fields = ['nome', 'CPF', 'endereco', 'estado', 'municipio', 'telefone', 'email']
 
 class ClienteSerializer(serializers.ModelSerializer):
     class Meta:
@@ -27,8 +27,7 @@ class ProdutoSerializer(serializers.ModelSerializer):
 class ItensDoPedidoSerializer(serializers.ModelSerializer):
     class Meta:
         model = ItensDoPedido
-        fields = ['produto', 'quantidade']
-        depth = 1
+        fields = ['pedido', 'produto', 'quantidade']
 
 
 class PedidoSerializer(serializers.ModelSerializer):
@@ -36,7 +35,6 @@ class PedidoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pedido
         fields = ['codigo_pedido', 'cliente', 'data_pedido', 'produtos']
-        depth = 1
 
 
 class CategoriaSerializer(serializers.ModelSerializer):
