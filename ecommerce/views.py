@@ -10,6 +10,7 @@ from .models import Produto
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.permissions import IsAdminUser, IsAuthenticated, AllowAny
 from rest_framework.decorators import api_view
+from rest_framework.exceptions import NotFound
 
 # Create your views here.
 class ClienteViewSet(viewsets.ModelViewSet):
