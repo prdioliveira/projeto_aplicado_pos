@@ -17,7 +17,7 @@ Including another URLconf
 from django import urls
 from django.urls import include, path, re_path
 from rest_framework import routers
-from ecommerce.views import CategoriaViewSet, ClienteViewSet, ItensViewSet
+from ecommerce.views import CategoriaViewSet, ClienteApiView, ClienteViewSet, ItensViewSet, PedidoApiView
 from ecommerce.views import PedidoViewSet
 from ecommerce.views import ProdutoViewSet
 from django.contrib import admin
@@ -36,6 +36,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('api/', include('ecommerce.urls')),
     url(r'^rest-auth/', include('rest_auth.urls')),
     url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
     url(r'^account/', include('allauth.urls')),
