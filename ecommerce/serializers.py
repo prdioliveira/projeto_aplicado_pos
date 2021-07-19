@@ -20,12 +20,17 @@ class ClienteCPFSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cliente
         fields = ['CPF']
+        
+class CategoriaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Categoria
+        fields = ['codigo_categoria', 'nome_categoria']
 
 class ProdutoSerializer(serializers.ModelSerializer):
+    nome_categoria = serializers.CharField(source='categoria', read_only=True)
     class Meta:
         model = Produto
-        fields = ['codigo_produto', 'nome_produto', 'preco_produto', 'quantidade_estoque', 'categoria']
-
+        fields = ['codigo_produto', 'nome_produto', 'preco_produto', 'quantidade_estoque', 'categoria', 'nome_categoria']
 
 class ItensDoPedidoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -40,7 +45,4 @@ class PedidoSerializer(serializers.ModelSerializer):
         model = Pedido
         fields = ['codigo_pedido', 'cliente', 'cpf_cliente', 'data_pedido', 'produtos']
 
-class CategoriaSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Categoria
-        fields = ['codigo_categoria', 'nome_categoria']
+

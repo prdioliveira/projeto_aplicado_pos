@@ -84,13 +84,19 @@ class PedidoApiView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class ProdutoApiView(APIView):
+    def get(self, request):
+        produtos = Produto.objects.all()
+        serializer = ProdutoSerializer(produtos, many=True)
+        return Response({"produtos": serializer.data})
     
 class ProdutoViewSet(viewsets.ModelViewSet):
     queryset = Produto.objects.all()
     serializer_class = ProdutoSerializer
     #authentication_classes = [SessionAuthentication]
     #permission_classes = (IsAuthenticated, )
-    authentication_classes = (TokenAuthentication, SessionAuthentication) 
+    authentication_classes = (TokenAuthentication, SessionAuthentication)
 
 
 class CategoriaViewSet(viewsets.ModelViewSet):
