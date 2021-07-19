@@ -33,9 +33,10 @@ class ProdutoSerializer(serializers.ModelSerializer):
         fields = ['codigo_produto', 'nome_produto', 'preco_produto', 'quantidade_estoque', 'categoria', 'nome_categoria']
 
 class ItensDoPedidoSerializer(serializers.ModelSerializer):
+    nome_produto = serializers.CharField(source='produto', read_only=True)
     class Meta:
         model = ItensDoPedido
-        fields = ['id', 'pedido', 'produto', 'quantidade']
+        fields = ['id', 'pedido', 'produto', 'nome_produto', 'quantidade']
 
 
 class PedidoSerializer(serializers.ModelSerializer):
