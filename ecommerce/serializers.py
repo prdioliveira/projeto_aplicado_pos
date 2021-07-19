@@ -9,7 +9,7 @@ from .models import Produto
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cliente
-        fields = ['nome', 'CPF', 'endereco', 'estado', 'municipio', 'telefone']
+        fields = ['id', 'nome', 'CPF', 'endereco', 'estado', 'municipio', 'telefone']
 
 class ClienteSerializer(serializers.ModelSerializer):
     class Meta:
