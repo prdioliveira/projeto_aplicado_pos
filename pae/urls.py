@@ -27,9 +27,9 @@ from allauth.account.views import confirm_email
 router = routers.DefaultRouter()
 router.register(r'clientes', ClienteViewSet, basename='Clientes')
 router.register(r'pedidos', PedidoViewSet, basename='Pedido')
-router.register(r'produtos', ProdutoViewSet)
-router.register(r'categorias', CategoriaViewSet)
-router.register(r'itens', ItensViewSet)
+router.register(r'produtos', ProdutoViewSet, basename='Produto')
+router.register(r'categorias', CategoriaViewSet, basename='Categoria')
+router.register(r'itens', ItensViewSet, basename='ItensDoPedido')
 
 
 urlpatterns = [

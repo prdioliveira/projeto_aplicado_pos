@@ -40,10 +40,7 @@ class ItensDoPedidoSerializer(serializers.ModelSerializer):
 
 
 class PedidoSerializer(serializers.ModelSerializer):
-    cpf_cliente = ClienteCPFSerializer(read_only=True)
     produtos = ItensDoPedidoSerializer(source='itensdopedido_set', many=True, read_only=True)
     class Meta:
         model = Pedido
-        fields = ['codigo_pedido', 'cliente', 'cpf_cliente', 'data_pedido', 'produtos']
-
-
+        fields = ['codigo_pedido', 'cliente', 'data_pedido', 'produtos']

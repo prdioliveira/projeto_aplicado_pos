@@ -92,19 +92,35 @@ class ProdutoApiView(APIView):
         return Response({"produtos": serializer.data})
     
 class ProdutoViewSet(viewsets.ModelViewSet):
-    queryset = Produto.objects.all()
+    
     serializer_class = ProdutoSerializer
     #authentication_classes = [SessionAuthentication]
     #permission_classes = (IsAuthenticated, )
     authentication_classes = (TokenAuthentication, SessionAuthentication)
 
+    #http://localhost:8000/produtos?nome_produto=Sabão
+    def get_queryset(self):
+        queryset = Produto.objects.all()
+        nome_produto = self.request.query_params.get('nome_produto')
+        if nome_produto is not None:
+            queryset = queryset.filter(nome_produto__contains=nome_produto)
+        return queryset
+
 
 class CategoriaViewSet(viewsets.ModelViewSet):
-    queryset = Categoria.objects.all()
+    
     serializer_class = CategoriaSerializer
     authentication_classes = (TokenAuthentication, SessionAuthentication) 
     #authentication_classes = [SessionAuthentication]
     #permission_classes = (IsAuthenticated, )
+
+    def get_queryset(self):
+        queryset = Categoria.objects.all()
+        nome_categoria = self.request.query_params.get('nome_categoria')
+
+        if nome_categoria is not None:
+            queryset = queryset.filter(nome_categoria__contains=nome_categoria)
+        return queryset
 
 class ItensViewSet(viewsets.ModelViewSet):
     queryset = ItensDoPedido.objects.all()
