@@ -1,0 +1,221 @@
+[
+    {
+      "model": "ecommerce.Categoria",
+      "pk": "0001",
+      "fields": {
+        "nome_categoria": "ELETRÔNICOS"
+      }
+    },
+    {
+        "model": "ecommerce.Categoria",
+        "pk": "0002",
+        "fields": {
+          "nome_categoria": "GAMES"
+        }
+      },
+      {
+        "model": "ecommerce.Categoria",
+        "pk": "0003",
+        "fields": {
+          "nome_categoria": "PAPELARIA"
+        }
+      },
+      {
+        "model": "ecommerce.Categoria",
+        "pk": "0004",
+        "fields": {
+          "nome_categoria": "UTENSÍLIOS"
+        }
+      },
+      {
+        "model": "ecommerce.Produto",
+        "pk": "0001",
+        "fields": {
+          "nome_produto": "Smart TV LED 32 HD Samsung T4300",
+          "preco_produto": "1532.35",
+          "quantidade_estoque": "25",
+          "categoria": "0001"
+        }
+      },
+      {
+        "model": "ecommerce.Produto",
+        "pk": "0002",
+        "fields": {
+          "nome_produto": "Caixa de Som Flip 5 Bluetooth",
+          "preco_produto": "530.10",
+          "quantidade_estoque": "250",
+          "categoria": "0001"
+        }
+      },
+      {
+        "model": "ecommerce.Produto",
+        "pk": "0003",
+        "fields": {
+          "nome_produto": "Novo Echo Dot (4ª Geração): Controle sua casa inteligente com Alexa",
+          "preco_produto": "379.05",
+          "quantidade_estoque": "201",
+          "categoria": "0001"
+        }
+      },
+      {
+        "model": "ecommerce.Produto",
+        "pk": "0004",
+        "fields": {
+          "nome_produto": "BABÁ ELETRÔNICA DIGITAL COM VISÃO NOTURNA E VÍDEO",
+          "preco_produto": "345.76",
+          "quantidade_estoque": "198",
+          "categoria": "0001"
+        }
+      },
+      {
+        "model": "ecommerce.Produto",
+        "pk": "0005",
+        "fields": {
+          "nome_produto": "Mini System LG Bluetooth 220W CD Player FM - USB Xboom CK43",
+          "preco_produto": "664.05",
+          "quantidade_estoque": "124",
+          "categoria": "0001"
+        }
+      },
+      {
+        "model": "ecommerce.Produto",
+        "pk": "0006",
+        "fields": {
+          "nome_produto": "Jogo de Panelas Tramontina Turim Antiaderente Vermelha",
+          "preco_produto": "397.99",
+          "quantidade_estoque": "1200",
+          "categoria": "0004"
+        }
+      },
+      {
+        "model": "ecommerce.Produto",
+        "pk": "0007",
+        "fields": {
+          "nome_produto": "Bandeja Espelhada Aparador e Bar - 50x30 - Roma Bronze",
+          "preco_produto": "353.90",
+          "quantidade_estoque": "150",
+          "categoria": "0004"
+        }
+      },
+      {
+        "model": "ecommerce.Produto",
+        "pk": "0008",
+        "fields": {
+          "nome_produto": "Panela De Pressão Elétrica 6l Electrolux Chef Pcc20 - 127v",
+          "preco_produto": "517.99",
+          "quantidade_estoque": "29",
+          "categoria": "0004"
+        }
+      },
+      {
+        "model": "ecommerce.Produto",
+        "pk": "0009",
+        "fields": {
+          "nome_produto": "Fritadeira Grand Family Inox-5,5l - AF-55I - Mondial",
+          "preco_produto": "494.99",
+          "quantidade_estoque": "33",
+          "categoria": "0004"
+        }
+      },
+      {
+        "model": "ecommerce.Produto",
+        "pk": "0010",
+        "fields": {
+          "nome_produto": "Liquidificador Oster OLIQ610 15 Velocidades 1400W - Preto",
+          "preco_produto": "161.42",
+          "quantidade_estoque": "33",
+          "categoria": "0004"
+        }
+      },
+      {
+        "model": "ecommerce.Produto",
+        "pk": "0011",
+        "fields": {
+          "nome_produto": "Mochila Bolsa Impermeável Reforçada Escolar Notebook Ótima",
+          "preco_produto": "52.90",
+          "quantidade_estoque": "1879",
+          "categoria": "0003"
+        }
+      },
+      {
+        "model": "ecommerce.Produto",
+        "pk": "0012",
+        "fields": {
+          "nome_produto": "Jogo FIFA 21 - PS4",
+          "preco_produto": "169.90",
+          "quantidade_estoque": "98",
+          "categoria": "0002"
+        }
+      },
+      {
+        "model": "ecommerce.Produto",
+        "pk": "0013",
+        "fields": {
+          "nome_produto": "Jogo Marvels Spider-Man GOTY Edition para PS4",
+          "preco_produto": "138.57",
+          "quantidade_estoque": "101",
+          "categoria": "0002"
+        }
+      },
+      {
+        "model": "ecommerce.Produto",
+        "pk": "0014",
+        "fields": {
+          "nome_produto": "Cyberpunk 2077 - Edição Padrão - PlayStation 4",
+          "preco_produto": "69.90",
+          "quantidade_estoque": "19",
+          "categoria": "0002"
+        }
+      },
+      {
+        "model": "ecommerce.Produto",
+        "pk": "0015",
+        "fields": {
+          "nome_produto": "Minecraft Starter Collection para PS4",
+          "preco_produto": "140.60",
+          "quantidade_estoque": "120",
+          "categoria": "0002"
+        }
+      },
+      {
+        "model": "ecommerce.Produto",
+        "pk": "0016",
+        "fields": {
+          "nome_produto": "The Last of Us (part Ii) PS4",
+          "preco_produto": "110.00",
+          "quantidade_estoque": "55",
+          "categoria": "0002"
+        }
+      },
+      {
+        "model": "ecommerce.Produto",
+        "pk": "0017",
+        "fields": {
+          "nome_produto": "Game Lego Batman 3: Beyond Gotham - PS4",
+          "preco_produto": "49.02",
+          "quantidade_estoque": "50",
+          "categoria": "0002"
+        }
+      },
+      {
+        "model": "ecommerce.Produto",
+        "pk": "0018",
+        "fields": {
+          "nome_produto": "Jogo God of War 4 - Playstation Hits - PS4",
+          "preco_produto": "56.90",
+          "quantidade_estoque": "32",
+          "categoria": "0002"
+        }
+      },
+      {
+        "model": "ecommerce.Produto",
+        "pk": "0019",
+        "fields": {
+          "nome_produto": "Combo com 4 Jogos para PS4 - Sony",
+          "preco_produto": "309.61",
+          "quantidade_estoque": "25",
+          "categoria": "0002"
+        }
+      }
+
+  ]
