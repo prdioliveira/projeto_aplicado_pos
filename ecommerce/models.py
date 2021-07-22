@@ -29,7 +29,7 @@ class Cliente(AbstractUser):
     
 
     def __str__(self):
-        return self.nome
+        return self.CPF + ' - ' + self.nome
 
 
 class Categoria(models.Model):
@@ -70,6 +70,9 @@ class ItensDoPedido(models.Model):
     produto = models.ForeignKey('Produto', on_delete=models.CASCADE)
     pedido = models.ForeignKey('Pedido', on_delete=models.CASCADE)
     quantidade = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.quantidade + "Teste"
 
 class Pedido(models.Model):
     class Meta:
