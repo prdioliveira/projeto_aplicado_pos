@@ -158,7 +158,7 @@ REST_AUTH_SERIALIZERS = {
 
 
 REST_FRAMEWORK = {
-    'EXCEPTION_HANDLER': 'ecommerce.utils.custom_exception_handler',
+    #'EXCEPTION_HANDLER': 'ecommerce.utils.custom_exception_handler',
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_AUTHENTICATION_CLASSES': [
     'rest_framework.authentication.TokenAuthentication',
