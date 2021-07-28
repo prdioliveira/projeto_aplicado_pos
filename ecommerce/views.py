@@ -126,8 +126,26 @@ class CategoriaViewSet(viewsets.ModelViewSet):
         return queryset
 
 
-class ItensViewSet(viewsets.ModelViewSet):
-    queryset = ItensDoPedido.objects.all()
+class ItensViewSet(viewsets.ModelViewSet):    
     serializer_class = ItensDoPedidoSerializer
     authentication_classes = (TokenAuthentication,) 
     permission_classes = (IsAuthenticated,)
+
+    def get_queryset(self):
+        """
+        This view should return a list of all the purchases
+        for the currently authenticated user.
+        """
+        if self.request.auth is None:
+            raise PermissionDenied({"details": "As credenciais de autenticação não foram fornecidas."})
+
+        user = self.request.user
+
+        # if not user.nome and not user.CPF:
+        #     raise PermissionDenied({"details": "Favor completar o perfil de usuário."})
+
+        codigo_pedido = Pedido.objects.get(cliente_id=user.id).codigo_pedido
+
+        print('----------------', codigo_pedido)
+        queryset = ItensDoPedido.objects.filter(pedido_id=codigo_pedido)
+        return queryset
