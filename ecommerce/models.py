@@ -55,7 +55,7 @@ class Produto(models.Model):
     nome_produto = models.CharField(max_length=100)
     preco_produto = models.CharField(max_length=30)
     quantidade_estoque = models.CharField(max_length=15)
-    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT)
 
 
     def __str__(self):
@@ -67,8 +67,8 @@ class ItensDoPedido(models.Model):
         verbose_name = 'itens_pedido'
         verbose_name_plural = 'itens_pedidos'
 
-    produto = models.ForeignKey('Produto', on_delete=models.CASCADE)
-    pedido = models.ForeignKey('Pedido', on_delete=models.CASCADE)
+    produto = models.ForeignKey('Produto', on_delete=models.PROTECT)
+    pedido = models.ForeignKey('Pedido', on_delete=models.PROTECT)
     quantidade = models.CharField(max_length=10)
 
     def __str__(self):
@@ -80,7 +80,7 @@ class Pedido(models.Model):
         verbose_name = 'pedido'
         verbose_name_plural = 'pedidos'
 
-    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, related_name='cliente')
+    cliente = models.ForeignKey(Cliente, on_delete=models.PROTECT, related_name='cliente')
     codigo_pedido = models.CharField(max_length=20, primary_key=True, name='codigo_pedido')
     data_pedido = models.DateField()
     produtos = models.ManyToManyField(Produto, through=ItensDoPedido)
