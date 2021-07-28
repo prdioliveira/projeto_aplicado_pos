@@ -35,13 +35,19 @@ class ProdutoSerializer(serializers.ModelSerializer):
 class ItensDoPedidoSerializer(serializers.ModelSerializer):
     nome_produto = serializers.CharField(source='produto', read_only=True)
     preco_produto = serializers.SerializerMethodField(read_only=True)
+    preco_total_produto = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = ItensDoPedido
-        fields = ['id', 'pedido', 'produto', 'nome_produto', 'preco_produto', 'quantidade']
+        fields = ['id', 'pedido', 'produto', 'nome_produto', 'preco_produto', 'quantidade', 'preco_total_produto']
 
     def get_preco_produto(self, obj):
         return Produto.objects.get(pk=obj.produto_id).preco_produto
+
+    def get_preco_total_produto(self, obj):
+        quantidade = float(ItensDoPedido.objects.get(pk=obj.id).quantidade)
+        preco_unitario = float(Produto.objects.get(pk=obj.produto_id).preco_produto)
+        return quantidade * preco_unitario
 
 
 class PedidoSerializer(serializers.ModelSerializer):
